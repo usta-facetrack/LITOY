@@ -1,14 +1,17 @@
 # Proyecto Reconocimiento Facial y Clasificación de Género
 
-<div align="center">
+<div align="center" style="line-height: 1.4;">
 
-### Yeimy Katherine Alarcón Almanza
-### Thomas Santiago Orjuela Martínez
-### Lina Manuela Rozo
+**Autores:**
+Yeimy Katherine Alarcón Almanza  
+Thomas Santiago Orjuela Martínez  
+**Lina Manuela Rozo Clavijo
+
+<br>
 
 **Universidad Santo Tomás**  
-_Pregrado Estadística_  
-**Redes Neuronales**  
+_Pregrado Estadística_ 
+**Redes Neuronales**
 _Profesor: Isaac Zainea_
 
 </div>
