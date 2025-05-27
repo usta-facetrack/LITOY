@@ -1,16 +1,19 @@
 # Proyecto Reconocimiento Facial y Clasificación de Género
 
-Facilitar el llamado de asitencia
+Autores
+Estudiante 1: [Yeimy Katherine Alarcón Almanza]
+Estudiante 2: [Thomas Santiago Orjuela Matínez]
+Estudiante 3: [Lina Manuela Rozo Clavijo]
 
-![Banner del Proyecto](https://via.placeholder.com/800x200.png?text=Proyecto+Ciencia+de+Datos)
+Curso: Redes Neuronales
+
+Institución: [Universidad Santo tomás]
+
+Este proyecto integra redes neuronales convolucionales, modelos de embeddings faciales y técnicas para construir un sistema que clasifica el género de un rostro humano y reconoce a estudiantes en imágenes grupales, con fines como el registro de asistencia automatizado.
 
 ![Python](https://img.shields.io/badge/Python-3.10-blue)
 ![pandas](https://img.shields.io/badge/pandas-2.2.3-orange)
 ![tqdm](https://img.shields.io/badge/tqdm-4.67.0-lightgrey)
-
-
-**Versión:** 0.0.0
-**Autor:** [Yeimy](mailto:yeimyaalmanza@gmail.com)  
 
 
 ## Introducción
@@ -19,7 +22,10 @@ El reconocimiento facial es una tecnología cada vez más presente en diversas a
 
 Este proyecto aborda todos los pasos desde la descarga y organización automática de imágenes, la generación de embeddings faciales, la detección y reconocimiento en imágenes grupales, hasta la evaluación exhaustiva de los modelos implementados. Además, se incluye la exploración de nuevos modelos para mejorar la precisión y robustez del sistema.
 
-## Objetivos
+## Objetivo General
+Desarrollar un sistema de reconocimiento facial que clasifique el género y reconozca estudiantes por medio de imágenes, utilizando deep learning y embeddings, para automatizar el registro de asistencia y evaluar su precisión en contextos reales.
+
+## Objetivos Específicos 
 - Implementar un pipeline automático para la descarga y organización de imágenes faciales desde enlaces en Google Drive.
 - Desarrollar y entrenar un modelo CNN para la clasificación de género (hombre/mujer) basado en imágenes faciales.
 - Extraer embeddings faciales robustos con FaceNet (MTCNN + InceptionResnetV1) para la identificación individual de estudiantes.
@@ -59,7 +65,23 @@ Se desarrolla una red neuronal convolucional (CNN) entrenada con TensorFlow/Kera
 **Salida:**
 Un modelo entrenado capaz de predecir el género a partir de una imagen facial nueva.
 
-3. **Generación de Embeddings Faciales con MTCNN + FaceNet**
+3. **Modelo de Reconocimiento Facial con CNN (TensorFlow/Keras)**
+**Descripción:**
+Se implementa un sistema de reconocimiento facial basado en una red neuronal convolucional (CNN) entrenada con TensorFlow/Keras, que identifica directamente a los estudiantes a partir de sus imágenes faciales. Este modelo no utiliza embeddings ni comparaciones, sino que clasifica cada rostro en una de las clases (estudiantes) disponibles.
+
+**Proceso:**
+
+- Carga y descarga automática de imágenes desde enlaces en Excel, organizadas por estudiante.
+- Preprocesamiento: redimensionado, normalización y codificación de etiquetas con LabelEncoder.
+- Creación de tf.data.Dataset, dividido en entrenamiento (80%) y validación (20%).
+- Arquitectura CNN con capas Conv2D, MaxPooling, Flatten y Dense con softmax.
+- Entrenamiento con sparse_categorical_crossentropy, optimizador Adam y EarlyStopping.
+-Evaluación y visualización de predicciones junto a etiquetas reales.
+
+**Aplicaciones:**
+Este modelo es útil para sistemas rápidos de identificación facial donde se cuenta con imágenes bien etiquetadas. Además, puede complementar sistemas basados en embeddings como FaceNet o ArcFace, proporcionando una segunda vía para reconocimiento directo.
+
+4. **Generación de Embeddings Faciales con MTCNN + FaceNet**
 **Descripción:**
 Para identificar individualmente a los estudiantes, se extraen vectores numéricos (embeddings) que representan características faciales únicas.
 
@@ -72,7 +94,7 @@ Para identificar individualmente a los estudiantes, se extraen vectores numéric
 **Importancia:**
 Los embeddings permiten comparar rostros mediante métricas de similitud (p. ej., coseno) de manera eficiente y precisa, clave para el reconocimiento facial.
 
-4. **Reconocimiento Facial en Imágenes Grupales**
+5. **Reconocimiento Facial en Imágenes Grupales**
 **Descripción:**
 Este módulo permite detectar y reconocer múltiples rostros dentro de una imagen que contiene a varios estudiantes.
 
@@ -83,7 +105,7 @@ Este módulo permite detectar y reconocer múltiples rostros dentro de una image
 - Comparar cada embedding con la base de datos para encontrar el estudiante más parecido.
 - Visualizar los resultados mostrando cada rostro con su nombre predicho y la foto de referencia, sin modificar la imagen grupal original.
 
-5. **Exploración con Embeddings ArcFace (InsightFace)**
+6. **Exploración con Embeddings ArcFace (InsightFace)**
 **Descripción:**
 Se implementa un pipeline alternativo de generación de embeddings utilizando ArcFace, un modelo basado en InsightFace que ha demostrado gran efectividad en reconocimiento facial.
 
@@ -94,7 +116,7 @@ Se implementa un pipeline alternativo de generación de embeddings utilizando Ar
 - Clasificación basada en similitud coseno con la base de datos de embeddings ArcFace.
 - Visualización detallada con etiquetas que muestran nombre real, nombre predicho, puntuación de similitud y estado (correcto o no).
 
-Importancia:
+**Importancia:**
 Proporciona una alternativa robusta para mejorar la precisión del sistema y comparar el desempeño frente a FaceNet, facilitando la elección del mejor modelo para el caso de uso.
 
 ## Instalación
