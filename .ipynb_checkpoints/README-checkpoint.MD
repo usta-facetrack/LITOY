@@ -10,7 +10,7 @@ Facilitar el llamado de asitencia
 
 
 **Versión:** 0.0.0
-**Autor:** [YEIMY](mailto:yeimyaalmanza@gmail.com)  
+**Autor:** [Yeimy](mailto:yeimyaalmanza@gmail.com)  
 
 
 ## Introducción
@@ -136,11 +136,6 @@ python src/descargar_imagenes.py
 python src/generar_embeddings_facenet.py
 ```
 
-- Generar embeddings con FaceNet:
-```bash
-python src/generar_embeddings_dict.py
-```
-
 - Generar embeddings con ArcFace:
 ```bash
 python src/generar_embeddings__dict_arcface.py
@@ -157,10 +152,12 @@ python src/clasificar_y_mostrar.py --modelo arcface
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
 ![pandas](https://img.shields.io/badge/pandas-2.2.2-orange)
 
+## Conclusiones
+
 ## Acceso al Google Colab
 
 Puedes acceder al repositorio completo [aquí](https://colab.research.google.com/drive/1ZPEX9MfHoFJl8TevM-20OUINn0KoyLrw?usp=sharing).
 
 ## Contacto
 
-Para cualquier duda o sugerencia, no dudes en contactarnos a través de [YEIMY](yeimyaalmanz@gmail.com), [THOMAS](ts.orjuelam@gmail.com) y [LINA](rozolina20@gmail.com).
+Para cualquier duda o sugerencia, no dudes en contactarnos a través de [Yeimy Alarcón](yeimyaalmanz@gmail.com), [Thomas Orjuela](ts.orjuelam@gmail.com) y [Lina Rozo](rozolina20@gmail.com).
