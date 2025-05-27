@@ -1,20 +1,14 @@
 # Proyecto Reconocimiento Facial y Clasificación de Género
 
-<div align="center" style="line-height: 1.4;">
-
-**Autores:**
-Yeimy Katherine Alarcón Almanza  
-Thomas Santiago Orjuela Martínez  
-**Lina Manuela Rozo Clavijo
-
-<br>
+**Autores:**  
+_Yeimy Katherine Alarcón Almanza_ 
+_Thomas Santiago Orjuela Martínez_  
+_Lina Manuela Rozo Clavijo_
 
 **Universidad Santo Tomás**  
 _Pregrado Estadística_ 
 **Redes Neuronales**
 _Profesor: Isaac Zainea_
-
-</div>
 
 Este proyecto integra redes neuronales convolucionales, modelos de embeddings faciales y técnicas para construir un sistema que clasifica el género de un rostro humano y reconoce a estudiantes en imágenes grupales, con fines como el registro de asistencia automatizado.
 
@@ -174,7 +168,6 @@ python src/generar_embeddings__dict_arcface.py
 ```bash
 python src/clasificar_y_mostrar.py --modelo arcface
 ```
-
 
 ## Requisitos
 
