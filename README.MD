@@ -1,13 +1,17 @@
 # Proyecto Reconocimiento Facial y Clasificación de Género
 
-Autores
-Estudiante 1: [Yeimy Katherine Alarcón Almanza]
-Estudiante 2: [Thomas Santiago Orjuela Matínez]
-Estudiante 3: [Lina Manuela Rozo Clavijo]
+<div align="center">
 
-Curso: Redes Neuronales
+### Yeimy Katherine Alarcón Almanza
+### Thomas Santiago Orjuela Martínez
+### Lina Manuela Rozo
 
-Institución: [Universidad Santo tomás]
+**Universidad Santo Tomás**  
+_Pregrado Estadística_  
+**Redes Neuronales**  
+_Profesor: Isaac Zainea_
+
+</div>
 
 Este proyecto integra redes neuronales convolucionales, modelos de embeddings faciales y técnicas para construir un sistema que clasifica el género de un rostro humano y reconoce a estudiantes en imágenes grupales, con fines como el registro de asistencia automatizado.
 
