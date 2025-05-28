@@ -1,0 +1,56 @@
+Este archivo contiene la lista de librerías necesarias para reproducir el entorno utilizado en la ejecución del proyecto en Google Colab.
+
+🔹 Instalación (pip install):
+!pip install facenet-pytorch
+!pip install gdown
+!pip install insightface
+!pip install matplotlib
+!pip install numpy
+!pip install onnxruntime
+!pip install openpyxl
+!pip install opencv-python
+!pip install pandas
+!pip install pillow
+!pip install scikit-learn
+!pip install tensorflow
+!pip install torchvision
+
+🔹 Importaciones (import):
+import cv2
+import math
+import matplotlib.pyplot as plt
+import numpy as np
+import os
+import pandas as pd
+import random
+import re
+import requests
+import shutil
+import torch
+import unicodedata
+import warnings
+
+from facenet_pytorch import MTCNN, InceptionResnetV1
+from google.colab import drive, files
+from insightface.app import FaceAnalysis
+from IPython.display import clear_output, display, Image as IPImage
+from itertools import combinations
+from PIL import Image, ImageDraw, ImageFont, UnidentifiedImageError
+from sklearn.metrics import (accuracy_score, auc, classification_report, 
+                             confusion_matrix, ConfusionMatrixDisplay, 
+                             f1_score, precision_score, recall_score, 
+                             roc_curve)
+from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import LabelEncoder
+from tensorflow import keras
+from tensorflow.keras import layers, models
+from tensorflow.keras.callbacks import EarlyStopping
+from tensorflow.keras.layers import (BatchNormalization, Conv2D, Dense, 
+                                     Dropout, Flatten, MaxPooling2D)
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.optimizers import Adam
+from tensorflow.keras.utils import to_categorical
+from tqdm import tqdm
+from typing import List
+import ipywidgets as widgets
