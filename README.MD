@@ -1,12 +1,16 @@
+<div align="center">
+
 # Proyecto Reconocimiento Facial y Clasificación de Género
 
 **Autores:**  
-_Yeimy Katherine Alarcón Almanza_,_Thomas Santiago Orjuela Martínez_y_Lina Manuela Rozo Clavijo_
+_Yeimy Katherine Alarcón Almanza_, _Thomas Santiago Orjuela Martínez_ y _Lina Manuela Rozo Clavijo_
 
-**Universidad Santo Tomás**<br>
-_Pregrado Estadística_ <br>
-**Redes Neuronales**<br>
+**Universidad Santo Tomás**  
+_Pregrado Estadística_  
+**Redes Neuronales**  
 _Profesor: Isaac Zainea_
+
+</div>
 
 Este proyecto integra redes neuronales convolucionales, modelos de embeddings faciales y técnicas para construir un sistema que clasifica el género de un rostro humano y reconoce a estudiantes en imágenes grupales, con fines como el registro de asistencia automatizado.
 
@@ -42,6 +46,7 @@ Desarrollar un sistema de reconocimiento facial que clasifique el género y reco
 El proyecto está organizado en varios módulos o partes que abordan diferentes etapas del pipeline de reconocimiento facial y clasificación de género. A continuación se detalla la estructura general y el propósito de cada componente:
 
 1. **Descarga y Preparación de Datos**
+
 **Descripción:**
 Este módulo automatiza la obtención de las imágenes faciales necesarias para el proyecto a partir de un archivo Excel. El archivo contiene los nombres completos de los estudiantes y enlaces a sus fotos almacenadas en Google Drive.
 
@@ -51,7 +56,12 @@ Este módulo automatiza la obtención de las imágenes faciales necesarias para 
 - Descarga automática de imágenes y almacenamiento ordenado en una carpeta local llamada imagenes_descargadas.
 - Normalización y control de calidad, asegurando que las imágenes tengan formatos compatibles (jpg, png, etc.) y que los nombres de archivo estén limpios para evitar errores en pasos posteriores.
 
+**Importancia:**
+
+Este proceso establece una base de datos estructurada y confiable que puede ser reutilizada a lo largo de todo el pipeline. Además, permite escalar fácilmente el sistema a nuevos estudiantes, ya que nuevas imágenes pueden ser añadidas y procesadas automáticamente sin necesidad de intervención manual adicional.
+
 2. **Modelo de Clasificación de Género con CNN**
+   
 **Descripción:**
 Se desarrolla una red neuronal convolucional (CNN) entrenada con TensorFlow/Keras para clasificar las imágenes faciales en dos categorías: "Hombre" y "Mujer".
 
@@ -59,12 +69,14 @@ Se desarrolla una red neuronal convolucional (CNN) entrenada con TensorFlow/Kera
 
 - Preprocesamiento de imágenes (normalización, resizing, data augmentation).
 - Arquitectura CNN personalizada o basada en modelos estándar (p.ej., MobileNet, ResNet).
-- Entrenamiento con un dataset balanceado y evaluación con métricas como accuracy y F1-score.
+- Entrenamiento supervisado con etiquetas de género previamente definidas.
+- Evaluación del modelo utilizando métricas como: Accuracy(porcentaje de clasificaciones correctas) y Precision, Recall, y F1-score (para entender el equilibrio entre clases).
 
 **Salida:**
 Un modelo entrenado capaz de predecir el género a partir de una imagen facial nueva.
 
 3. **Modelo de Reconocimiento Facial con CNN (TensorFlow/Keras)**
+
 **Descripción:**
 Se implementa un sistema de reconocimiento facial basado en una red neuronal convolucional (CNN) entrenada con TensorFlow/Keras, que identifica directamente a los estudiantes a partir de sus imágenes faciales. Este modelo no utiliza embeddings ni comparaciones, sino que clasifica cada rostro en una de las clases (estudiantes) disponibles.
 
@@ -72,15 +84,16 @@ Se implementa un sistema de reconocimiento facial basado en una red neuronal con
 
 - Carga y descarga automática de imágenes desde enlaces en Excel, organizadas por estudiante.
 - Preprocesamiento: redimensionado, normalización y codificación de etiquetas con LabelEncoder.
-- Creación de tf.data.Dataset, dividido en entrenamiento (80%) y validación (20%).
+- Creación de tf.data.Dataset, dividido en entrenamiento (70%) y validación (30%).
 - Arquitectura CNN con capas Conv2D, MaxPooling, Flatten y Dense con softmax.
 - Entrenamiento con sparse_categorical_crossentropy, optimizador Adam y EarlyStopping.
--Evaluación y visualización de predicciones junto a etiquetas reales.
+- Evaluación y visualización de predicciones junto a etiquetas reales.
 
 **Aplicaciones:**
 Este modelo es útil para sistemas rápidos de identificación facial donde se cuenta con imágenes bien etiquetadas. Además, puede complementar sistemas basados en embeddings como FaceNet o ArcFace, proporcionando una segunda vía para reconocimiento directo.
 
 4. **Generación de Embeddings Faciales con MTCNN + FaceNet**
+
 **Descripción:**
 Para identificar individualmente a los estudiantes, se extraen vectores numéricos (embeddings) que representan características faciales únicas.
 
@@ -94,6 +107,7 @@ Para identificar individualmente a los estudiantes, se extraen vectores numéric
 Los embeddings permiten comparar rostros mediante métricas de similitud (p. ej., coseno) de manera eficiente y precisa, clave para el reconocimiento facial.
 
 5. **Reconocimiento Facial en Imágenes Grupales**
+   
 **Descripción:**
 Este módulo permite detectar y reconocer múltiples rostros dentro de una imagen que contiene a varios estudiantes.
 
@@ -104,7 +118,12 @@ Este módulo permite detectar y reconocer múltiples rostros dentro de una image
 - Comparar cada embedding con la base de datos para encontrar el estudiante más parecido.
 - Visualizar los resultados mostrando cada rostro con su nombre predicho y la foto de referencia, sin modificar la imagen grupal original.
 
+**Importancia:**
+
+Facilita la automatización de tareas como el registro de asistencia en clases o eventos mediante reconocimiento en fotos grupales.
+
 6. **Exploración con Embeddings ArcFace (InsightFace)**
+   
 **Descripción:**
 Se implementa un pipeline alternativo de generación de embeddings utilizando ArcFace, un modelo basado en InsightFace que ha demostrado gran efectividad en reconocimiento facial.
 
@@ -141,31 +160,24 @@ pip install requests
 
 ## Uso
 
-A continuación, se muestra cómo puedes ejecutar algunos de los scripts principales del proyecto:
+Este proyecto está diseñado para ser usado principalmente mediante un **notebook interactivo en Google Colab** llamado:
 
-```bash
-python src/tu_script.py
-```
+- `Modeloface_embedding_facenet_mtcnn.ipynb`
 
-- Descargar imágenes desde el archivo Excel:
-```bash
-python src/descargar_imagenes.py
-```
+Luego:
+1. Abre el notebook `Modelo face_embedding_facenet_mtcnn.ipynb` en Google Colab.  
+   Luego puedes clonarlo en tu máquina local o montarlo en tu Google Drive.
 
-- Generar embeddings con FaceNet:
-```bash
-python src/generar_embeddings_facenet.py
-```
+2. Ejecuta las celdas de instalación de requisitos (librerías y configuraciones necesarias) para que el código funcione correctamente.
 
-- Generar embeddings con ArcFace:
-```bash
-python src/generar_embeddings__dict_arcface.py
-```
+3. Conecta tu cuenta de Google Drive en el entorno de Colab.  
+   Asegúrate de que en tu Drive esté la carpeta con las fotos de los estudiantes y también el archivo Excel que contiene los nombres y enlaces a las imágenes almacenadas en Drive.
 
-- Clasificar y mostrar resultados usando ArcFace:
-```bash
-python src/clasificar_y_mostrar.py --modelo arcface
-```
+4. Ejecuta las celdas paso a paso para realizar todo el pipeline.
+
+5. Visualiza y analiza los resultados generados en las celdas finales.
+
+6. Puedes modificar parámetros y probar nuevas configuraciones directamente en el notebook para experimentar con el pipeline.
 
 ## Requisitos
 
