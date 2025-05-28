@@ -184,7 +184,22 @@ Luego:
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
 ![pandas](https://img.shields.io/badge/pandas-2.2.2-orange)
 
-## Conclusiones
+## Conclusiones modelos de reconocimiento facial
+
+Como se mostró en el resto del trabajo, presentamos dos distintos enfoques para el análisis comparativo de reconocimiento facial, con el fin de poder llevar un control de la asistencia presencial a clase por parte del estudiantado del curso. Explorando desde modelos clásicos de redes neuronales convolucionales (como lo son CNN). Hasta otras técnicas más modernas basadas en embeddings faciales. Después de realizar esto, con quedan las siguientes conclusiones:
+
+
+1. **Construcción de un sistema integral de reconocimiento facial**
+
+El trabajo logró integrar de manera exitosa múltiples modelos y metodologías en un sistema completo de reconocimiento facial. Este sistema abarca desde la detección de rostros y su preprocesamiento, hasta la extracción de características y la identificación de personas. La arquitectura modular desarrollada facilita su extensión y adaptación a distintos escenarios, lo cual es fundamental para su aplicabilidad en diversos contextos reales.
+
+2. **Evaluación de enfoques clásicos y modernos de identificación facial**
+
+Como fue mencionado, se compararon enfoques tradicionales basados en redes neuronales convolucionales entrenadas desde cero, con métodos modernos que emplean embeddings faciales generados por modelos pre-etrenados como FaceNet y ArcFace. Esta comparación permitió evidenciar cómo los modelos de última generación ofrecen ventajas sustanciales en precisión, escalabilidad y capacidad de generalización frente a métodos más simples. En particular, los modelos basados en embeddings demostraron ser más robustos ante variaciones en la posición de los estudiantes en las fotos, iluminación o sus expresiones faciales.
+
+3. **Uso de herramientas accesibles y replicables**
+
+El proyecto fue desarrollado completamente en Google Colab, utilizando bibliotecas de código abierto como facenet-pytorch, insightface, TensorFlow, y scikit-learn, lo cual lo hace accesible para otros investigadores o instituciones con recursos limitados. Este enfoque democratiza el acceso a tecnologías avanzadas de inteligencia artificial, fomentando su aplicación en distintos ámbitos sociales y educativos.
 
 ## Acceso al Google Colab
 
