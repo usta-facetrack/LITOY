@@ -184,7 +184,7 @@ Luego:
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
 ![pandas](https://img.shields.io/badge/pandas-2.2.2-orange)
 
-## Conclusiones modelos de reconocimiento facial
+## Conclusiones
 
 Como se mostró en el resto del trabajo, presentamos dos distintos enfoques para el análisis comparativo de reconocimiento facial, con el fin de poder llevar un control de la asistencia presencial a clase por parte del estudiantado del curso. Explorando desde modelos clásicos de redes neuronales convolucionales (como lo son CNN). Hasta otras técnicas más modernas basadas en embeddings faciales. Después de realizar esto, con quedan las siguientes conclusiones:
 
@@ -200,6 +200,35 @@ Como fue mencionado, se compararon enfoques tradicionales basados en redes neuro
 3. **Uso de herramientas accesibles y replicables**
 
 El proyecto fue desarrollado completamente en Google Colab, utilizando bibliotecas de código abierto como facenet-pytorch, insightface, TensorFlow, y scikit-learn, lo cual lo hace accesible para otros investigadores o instituciones con recursos limitados. Este enfoque democratiza el acceso a tecnologías avanzadas de inteligencia artificial, fomentando su aplicación en distintos ámbitos sociales y educativos.
+
+4. **Limitaciones Técnicas**
+   
+Capacidad de procesamiento computacional:
+El entrenamiento de redes neuronales convolucionales (CNN) requiere recursos computacionales significativos, especialmente en tareas como la verificación facial. La falta de acceso a GPU o hardware especializado limitó la complejidad del modelo, el tamaño de los lotes y la cantidad de épocas que pudimos explorar, lo cual pudo afectar negativamente el desempeño.
+
+Escasez y calidad de datos:
+El tamaño reducido del conjunto de datos, así como la limitada diversidad de las imágenes (en términos de iluminación, poses, expresiones, etc.), restringieron la capacidad del modelo para generalizar. En tareas de verificación, la falta de suficientes imágenes por persona dificultó una comparación robusta entre pares de rostros.
+
+5. **Errores Frecuentes Observados**
+   
+Sobreajuste en clasificación de género:
+Se observó un alto rendimiento en entrenamiento pero una caída notable en validación, indicando que el modelo memorizó patrones específicos sin generalizar bien a datos nuevos.
+
+Mal rendimiento en verificación facial (ROC-AUC < 0.5):
+Los modelos de verificación (FaceNet + MTCNN y ArcFace) presentaron resultados equivalentes o peores que el azar. Esto puede atribuirse a errores en la detección de rostros, embeddings poco representativos o una mala configuración en la comparación de vectores.
+
+Clasificaciones erróneas repetidas:
+Algunos individuos fueron clasificados de forma incorrecta de manera sistemática, posiblemente por compartir características visuales similares con otra clase o por baja calidad de sus imágenes.
+
+6. **Aspectos Éticos**
+Sesgos en los datos y el modelo:
+Si el dataset tiene una distribución desbalanceada de género, etnias o edades, los modelos pueden aprender sesgos implícitos y reproducirlos en sus predicciones. Esto es especialmente delicado en tareas de reconocimiento facial, donde los errores pueden tener consecuencias serias (por ejemplo, falsos positivos en sistemas de vigilancia).
+
+Privacidad y consentimiento:
+El uso de imágenes faciales implica el tratamiento de datos personales sensibles. Es fundamental contar con el consentimiento informado de las personas cuyas imágenes se utilizan, así como garantizar el almacenamiento seguro y ético de dicha información.
+
+Aplicaciones malintencionadas:
+Las tecnologías de reconocimiento facial pueden ser empleadas en contextos que vulneren los derechos humanos, como vigilancia masiva o discriminación automatizada. Por tanto, el desarrollo y aplicación de estos modelos debe regirse por principios éticos sólidos y marcos legales claros.
 
 ## Acceso al Google Colab
 
