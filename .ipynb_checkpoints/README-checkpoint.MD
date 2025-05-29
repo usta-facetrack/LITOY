@@ -221,6 +221,7 @@ Clasificaciones erróneas repetidas:
 Algunos individuos fueron clasificados de forma incorrecta de manera sistemática, posiblemente por compartir características visuales similares con otra clase o por baja calidad de sus imágenes.
 
 6. **Aspectos Éticos**
+   
 Sesgos en los datos y el modelo:
 Si el dataset tiene una distribución desbalanceada de género, etnias o edades, los modelos pueden aprender sesgos implícitos y reproducirlos en sus predicciones. Esto es especialmente delicado en tareas de reconocimiento facial, donde los errores pueden tener consecuencias serias (por ejemplo, falsos positivos en sistemas de vigilancia).
 
